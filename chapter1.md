@@ -6,7 +6,6 @@ CONCRETE vs ABSTRACT
 
 - How difficult was it to write?
 - How hard is it to understand?
-- How difficult was it to write?
 - How expensive will it be to change?
 - Judging Code & Complexity (Flog/ABC/Dah!) - Assignments, "branches", conditions
 
@@ -37,3 +36,7 @@ CONCRETE vs ABSTRACT
 Parts: Setup, Do, Verify
 
 * Code like this `pluralize` method gets written when programmers take the *DRY* principle to extremes, as if they’re allergic to duplication
+
+## To Talk About
+
+* SOLID...
