@@ -3,10 +3,10 @@ class Bottles
   end
 
   def verse(number)
-    <<-VERSE
-#{chorus(number)}
-#{refrain(number)}
-VERSE
+    <<~HEREDOC
+      #{chorus(number)}
+      #{refrain(number)}
+    HEREDOC
   end
 
   def verses(verse1, verse2)
@@ -30,7 +30,7 @@ VERSE
     when 0
       "No more bottles of beer on the wall, no more bottles of beer."
     when 1
-      "1 bottle of beer on the wall, 1 bottle of beer."
+      "#{number} bottle of beer on the wall, #{number} bottle of beer."
     else
       "#{number} bottles of beer on the wall, #{number} bottles of beer."
     end
@@ -49,8 +49,3 @@ VERSE
     end
   end
 end
-
-# puts Bottles.new.verse(99)
-# puts Bottles.new.verse(98)
-
-puts Bottles.new.verses(2, 0)
