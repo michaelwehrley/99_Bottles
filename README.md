@@ -84,3 +84,5 @@ Steps:
 * Question: is the fact that `container` returns a default now now mater what, but can be augmented in the future with a different value an example of Open/Close?
 
 * **“... refactor the existing code to be open to the new requirement, next, add the new code...Making existing code open to a new requirement often requires identifying and naming abstractions.”**
+
+Open and Closed: if a new requirement is needed look to see how to do it.  It you can't, then make your code open for *this* modification.
