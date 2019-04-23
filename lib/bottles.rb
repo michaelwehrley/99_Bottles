@@ -30,22 +30,26 @@ class Bottles
     when 0
       "No more bottles of beer on the wall, no more bottles of beer."
     when 1
-      "#{number} bottle of beer on the wall, #{number} bottle of beer."
+      "1 bottle of beer on the wall, #{container(number)} of beer."
     else
-      "#{number} bottles of beer on the wall, #{number} bottles of beer."
+      "#{number} bottles of beer on the wall, #{container(number)} of beer."
     end
   end
 
   def refrain(number)
     case number
     when 0
-      "Go to the store and buy some more, 99 bottles of beer on the wall."
+      "Go to the store and buy some more, #{container(99)} of beer on the wall."
     when 1
       "Take it down and pass it around, no more bottles of beer on the wall."
     when 2
-      "Take one down and pass it around, 1 bottle of beer on the wall."
+      "Take one down and pass it around, #{container(number - 1)} of beer on the wall."
     else
-      "Take one down and pass it around, #{number - 1} bottles of beer on the wall."
+      "Take one down and pass it around, #{container(number - 1)} of beer on the wall."
     end
+  end
+
+  def container(number)
+    number == 1 ? "1 bottle" : "#{number} bottles"
   end
 end
