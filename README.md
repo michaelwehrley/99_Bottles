@@ -31,6 +31,8 @@ CONCRETE vs ABSTRACT
   ** Branches counts not branches of an if statement (as one could forgivably infer) but branches of control, meaning function calls or message sends.
   ** Conditions counts conditional logic.
 
+Testing: `ruby test/bottles_test.rb` => `minitest` is ruby, `rspec` is a DSL.
+
 ## Chapter 2 TDD
 
 Parts: Setup, Do, Verify
@@ -41,8 +43,9 @@ Parts: Setup, Do, Verify
 
 * SOLID...
 
-## Chapter 3 - Unearthing Concepts - SOLID PRINCIPLES! YAYYYY!!!!
+## Chapter 3 - Unearthing Concepts - Refactor Gradually (via Flocking Rules) - S.O.L.I.D.!
 
+* SOLID PRINCIPLES! YAYYYY!!!!
 * Martin Flower: [Refactoring: Improving the Design of Existing Code](https://books.google.com/books/about/Refactoring.html?id=HmrDHwgkbPsC) & Code Smells. In Ruby: https://martinfowler.com/books/refactoringRubyEd.html
 
 * Change only when change is needed - and not for aesthetics. Some code that never changes doesn't need to change. “Code that needs to be changed must be changeable...But generally it’s best to clarify requirements, and then write the minimum necessary code.”
@@ -68,7 +71,7 @@ Steps:
   1. “you must decide what this **difference** means.” Wow, compare 1 to 2 to 6! OMG! The issue is not pluralization. General rule v. new requirement.
   1. Conditions: make a **TABLE** to figure out name. What is this object/unit. In OOO actually find a the word you use in converation.
   1. Don't change everything b/c “If you simultaneously change many things and something breaks, you’re forced to understand everything in order to fix anything.”
-  1. “Flocking Rules:
+  1. **Flocking Rules**: Easier said than done.
     * Select the things that are most alike.
     * Find the smallest difference between them.
     * Make the simplest change to remove that difference:
@@ -86,3 +89,5 @@ Steps:
 * **“... refactor the existing code to be open to the new requirement, next, add the new code...Making existing code open to a new requirement often requires identifying and naming abstractions.”**
 
 Open and Closed: if a new requirement is needed look to see how to do it.  It you can't, then make your code open for *this* modification.
+
+## Chapter 4
