@@ -29,8 +29,6 @@ class Bottles
     case number
     when 0
       "No more bottles of beer on the wall, no more bottles of beer."
-    when 1
-      "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer."
     else
       "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer."
     end
@@ -42,8 +40,6 @@ class Bottles
       "Go to the store and buy some more, 99 #{container(99)} of beer on the wall."
     when 1
       "Take it down and pass it around, no more bottles of beer on the wall."
-    when 2
-      "Take one down and pass it around, #{number - 1} #{container(number - 1)} of beer on the wall."
     else
       "Take one down and pass it around, #{number - 1} #{container(number - 1)} of beer on the wall."
     end
