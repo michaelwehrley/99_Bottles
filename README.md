@@ -91,3 +91,54 @@ Steps:
 Open and Closed: if a new requirement is needed look to see how to do it.  It you can't, then make your code open for *this* modification.
 
 ## Chapter 4
+
+* WOW: “If all verse variants are alike in an underlying, more abstract, way, then "it" and "one" must represent a smaller abstraction within that larger one.”
+
+* Good point about naming: “ The words "it" and "one" are so innately generic that naming the underlying concept is particularly tough. Names should neither be too general nor too specific.”
+  * LOL: “Some folks allot themselves five to ten minutes to ponder (usually with thesaurus in hand),”
+
+* LOL: `pronoun`
+
+Great point to remember: **“Remember that the goal is to locate the next small difference, not the next clump of differences.”**
+
+#### Going Further with Abstractions
+| Number |    XXX?   |
+|--------|-----------|
+|   99   |   '99'    |
+|--------|-----------|
+|   50   |   '50'    |
+|--------|-----------|
+|   1    |   '1'     |
+|--------|-----------|
+|   0    | 'no more' |
+|--------|-----------|
+
+```
+ 1   def quantity(number)
+ 2     if number == 0
+ 3       "no more"
+ 4     else
+ 5       number
+ 6     end
+ 7   end
+ 8 
+ 9   def pronoun(number)
+10     if number == 1
+11       "it"
+12     else
+13       "one"
+14     end
+15   end
+16 
+17   def container(number)
+18     if number == 1
+19       "bottle"
+20     else
+21       "bottles"
+22     end
+23   end
+```
+
+**“Each has a single responsibility. They are identical in shape. All take the same argument.”**
+
+#### Obeying the Liskov Substitution Principle

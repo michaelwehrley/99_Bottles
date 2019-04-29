@@ -4,7 +4,6 @@ class Bottles
 
   def verse(number)
     <<~HEREDOC
-      #{chorus(number)}
       #{refrain(number)}
     HEREDOC
   end
@@ -25,27 +24,35 @@ class Bottles
 
   private
 
-  def chorus(number)
-    case number
-    when 0
-      "No more bottles of beer on the wall, no more bottles of beer."
-    else
-      "#{number} #{container(number)} of beer on the wall, #{number} #{container(number)} of beer."
-    end
-  end
-
   def refrain(number)
     case number
     when 0
-      "Go to the store and buy some more, 99 #{container(99)} of beer on the wall."
+      "No more bottles of beer on the wall, " +
+      "#{quantity(0)} bottles of beer.\n" +
+      "Go to the store and buy some more, " +
+      "99 #{container(99)} of beer on the wall."
     when 1
-      "Take it down and pass it around, no more bottles of beer on the wall."
+      "#{number} #{container(number)} of beer on the wall, " +
+      "#{quantity(number)} #{container(number)} of beer.\n" +
+      "Take #{pronoun(number)} down and pass it around, " +
+      "#{quantity(number - 1)} bottles of beer on the wall."
     else
-      "Take one down and pass it around, #{number - 1} #{container(number - 1)} of beer on the wall."
+      "#{number} #{container(number)} of beer on the wall, " +
+      "#{quantity(number)} #{container(number)} of beer.\n" +
+      "Take #{pronoun(number)} down and pass it around, " +
+      "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall."
     end
   end
 
   def container(number)
     number == 1 ? "bottle" : "bottles"
+  end
+
+  def pronoun(number)
+    number == 1 ? "it" : "one"
+  end
+
+  def quantity(number = 0)
+    number == 0 ? "no more" : number
   end
 end
