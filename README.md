@@ -142,3 +142,9 @@ Great point to remember: **“Remember that the goal is to locate the next small
 **“Each has a single responsibility. They are identical in shape. All take the same argument.”**
 
 #### Obeying the Liskov Substitution Principle
+
+* **“Every piece of knowledge is a dependency, and the way that quantity is written requires verse to know too many things. If quantity were more trustworthy, verse could know less.”**
+* Liskov: “subtypes must be substitutable for their supertypes.”
+* That means: **“objects be what they promise they are.”**
+* **“The Liskov Substitution Principle also applies to duck types.”**
+* GREAT EXAMPLE WITH `quantity(number)` following Liskov!
