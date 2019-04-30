@@ -31,14 +31,9 @@ class Bottles
       "#{quantity(0)} bottles of beer.\n" +
       "Go to the store and buy some more, " +
       "99 #{container(99)} of beer on the wall."
-    when 1
-      "#{number} #{container(number)} of beer on the wall, " +
-      "#{quantity(number)} #{container(number)} of beer.\n" +
-      "Take #{pronoun(number)} down and pass it around, " +
-      "#{quantity(number - 1)} bottles of beer on the wall."
     else
       "#{number} #{container(number)} of beer on the wall, " +
-      "#{quantity(number)} #{container(number)} of beer.\n" +
+      "#{number} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
       "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall."
     end
