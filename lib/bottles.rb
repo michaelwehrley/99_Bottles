@@ -27,13 +27,13 @@ class Bottles
   def refrain(number)
     case number
     when 0
-      "No more bottles of beer on the wall, " +
-      "#{quantity(0)} bottles of beer.\n" +
+      "#{quantity(number).to_s.capitalize} #{container(number)} of beer on the wall, " +
+      "#{quantity(number)} #{container(number)} of beer.\n" +
       "Go to the store and buy some more, " +
       "99 #{container(99)} of beer on the wall."
     else
-      "#{number} #{container(number)} of beer on the wall, " +
-      "#{number} #{container(number)} of beer.\n" +
+      "#{quantity(number).to_s.capitalize} #{container(number)} of beer on the wall, " +
+      "#{quantity(number)} #{container(number)} of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
       "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall."
     end
