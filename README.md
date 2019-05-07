@@ -145,6 +145,21 @@ Great point to remember: **“Remember that the goal is to locate the next small
 
 * **“Every piece of knowledge is a dependency, and the way that quantity is written requires verse to know too many things. If quantity were more trustworthy, verse could know less.”**
 * Liskov: “subtypes must be substitutable for their supertypes.”
-* That means: **“objects be what they promise they are.”**
-* **“The Liskov Substitution Principle also applies to duck types.”**
+* _That means:_ **“objects be what they promise they are.”**
+* **“The Liskov Substitution Principle also applies to duck types.”** :smile:!
 * GREAT EXAMPLE WITH `quantity(number)` following Liskov!
+
+#### Flocking Rules - Discovering Deep Abstractions!
+* Just because tests pass - doesn't make a _good_ "refactor"
+* Increasing conditional branching from 3 to 2 likely means the "refactor" is not better.
+* Meaning should remain consistent - concepts should make sense!
+* “The more confused you are, the more important it is to nibble.”
+* “Easier to see how things are different if you make them more alike.”
+
+**“If you had perfect understanding, you’d write perfect applications.”**
+
+## Chapter 6
+
+Creating Classes!  Yayy!
+
+- “Listing 4.52: 99 Is a Quantity”

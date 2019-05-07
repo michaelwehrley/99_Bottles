@@ -8,14 +8,18 @@ class Bottles
     HEREDOC
   end
 
-  def verses(verse1, verse2)
-    counting = [*verse2..verse1]
-    content = ""
-    counting.reverse.each_with_index do |v, i|
-      content += verse(v)
-      content += "\n" if i < counting.length - 1
-    end
-    content
+  # def verses(verse1, verse2)
+  #   counting = [*verse2..verse1]
+  #   content = ""
+  #   counting.reverse.each_with_index do |v, i|
+  #     content += verse(v)
+  #     content += "\n" if i < counting.length - 1
+  #   end
+  #   content
+  # end
+
+  def verses(starting, ending)
+    starting.downto(ending).collect { |i| verse(i) }.join("\n")
   end
 
   def song
@@ -29,13 +33,21 @@ class Bottles
     when 0
       "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
       "#{quantity(number)} #{container(number)} of beer.\n" +
-      "Go to the store and buy some more, " +
+      "#{action(number)}, " +
       "#{quantity(99)} #{container(99)} of beer on the wall."
     else
       "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
       "#{quantity(number)} #{container(number)} of beer.\n" +
-      "Take #{pronoun(number)} down and pass it around, " +
+      "#{action(number)}, " +
       "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall."
+    end
+  end
+
+  def action(number)
+    if number == 0
+      "Go to the store and buy some more"
+    else
+      "Take #{pronoun(number)} down and pass it around"
     end
   end
 
