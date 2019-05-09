@@ -90,7 +90,11 @@ Steps:
 
 Open and Closed: if a new requirement is needed look to see how to do it.  It you can't, then make your code open for *this* modification.
 
-## Chapter 4
+## Chapter 4 - ABSTRACTIONS
+
+“Abstractions tell you where your code relies upon an idea.” (4.9)
+
+Excerpt From: Sandi Metz, Katrina Owen. “99 Bottles of OOP.” Apple Books. 
 
 * WOW: “If all verse variants are alike in an underlying, more abstract, way, then "it" and "one" must represent a smaller abstraction within that larger one.”
 
@@ -157,6 +161,13 @@ Great point to remember: **“Remember that the goal is to locate the next small
 * “Easier to see how things are different if you make them more alike.”
 
 **“If you had perfect understanding, you’d write perfect applications.”**
+
+
+##### `successor(number)`
+
+“The successor concept illustrates the power of iterative application of the Flocking Rules. This concept wasn’t even hinted at in the solutions given in Chapter 1, and if you found it when you worked the problem yourself, you’re in a minority. The concept is so subtle most programmers don’t notice it, and yet it simply appears if you follow this simple set of rules.
+
+Successor is important, and separating it from quantity gives both methods a single responsibility. If you conflate choosing-what-to-sing-for-any-number (quantity) with deciding-what-verse-to-sing-next (successor), the resulting method would be harder to understand, future refactorings would be more difficult, and attempts to change the code for one idea might accidentally break it for the other.”
 
 ## Chapter 6
 

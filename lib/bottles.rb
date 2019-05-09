@@ -29,18 +29,10 @@ class Bottles
   private
 
   def refrain(number)
-    case number
-    when 0
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
-      "#{quantity(number)} #{container(number)} of beer.\n" +
-      "#{action(number)}, " +
-      "#{quantity(99)} #{container(99)} of beer on the wall."
-    else
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
-      "#{quantity(number)} #{container(number)} of beer.\n" +
-      "#{action(number)}, " +
-      "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall."
-    end
+    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
+    "#{quantity(number)} #{container(number)} of beer.\n" +
+    "#{action(number)}, " +
+    "#{quantity(successor(number))} #{container(number - 1)} of beer on the wall."
   end
 
   def action(number)
@@ -61,5 +53,9 @@ class Bottles
 
   def quantity(number = 0)
     number == 0 ? "no more" : number.to_s
+  end
+
+  def successor(number)
+    number == 0 ? 99 : number - 1
   end
 end
