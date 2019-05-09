@@ -1,5 +1,7 @@
 # 99 Bottles
 
+“Code smells again guide the choice of the next refactoring.” (Chapter 5)
+
 ## Chapter 1 Simplicity
 
 CONCRETE vs ABSTRACT
@@ -169,8 +171,10 @@ Great point to remember: **“Remember that the goal is to locate the next small
 
 Successor is important, and separating it from quantity gives both methods a single responsibility. If you conflate choosing-what-to-sing-for-any-number (quantity) with deciding-what-verse-to-sing-next (successor), the resulting method would be harder to understand, future refactorings would be more difficult, and attempts to change the code for one idea might accidentally break it for the other.”
 
-## Chapter 6
+### CURRENT TRADE OFF - HOLY SHIT!
 
-Creating Classes!  Yayy!
+“From Flog’s point of view, all you’ve accomplished is to turn one conditional into many, while simultaneously adding 55% more code.”
 
-- “Listing 4.52: 99 Is a Quantity”
+## Chapter 5: “Code should be open for extension and closed for modification.”
+
+What about the six-pack - still closed for motification?

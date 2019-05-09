@@ -3,20 +3,8 @@ class Bottles
   end
 
   def verse(number)
-    <<~HEREDOC
-      #{refrain(number)}
-    HEREDOC
+    refrain(number)
   end
-
-  # def verses(verse1, verse2)
-  #   counting = [*verse2..verse1]
-  #   content = ""
-  #   counting.reverse.each_with_index do |v, i|
-  #     content += verse(v)
-  #     content += "\n" if i < counting.length - 1
-  #   end
-  #   content
-  # end
 
   def verses(starting, ending)
     starting.downto(ending).collect { |i| verse(i) }.join("\n")
@@ -32,7 +20,7 @@ class Bottles
     "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
     "#{quantity(number)} #{container(number)} of beer.\n" +
     "#{action(number)}, " +
-    "#{quantity(successor(number))} #{container(number - 1)} of beer on the wall."
+    "#{quantity(successor(number))} #{container(number - 1)} of beer on the wall.\n"
   end
 
   def action(number)
