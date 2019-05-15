@@ -177,4 +177,57 @@ Successor is important, and separating it from quantity gives both methods a sin
 
 ## Chapter 5: “Code should be open for extension and closed for modification.”
 
-What about the six-pack - still closed for motification?
+### EXTRACT CLASS
+
+"It recognized that many methods in Bottles obsessed on number, and undertook the Extract Class refactoring to cure this obsession."
+
+### SAME CONCEPT
+Finding objects/parameterst that are same in concept is important in refactoring...
+
+In OO, you shouldn't need `if`/`else` that "supplies behavior" b/c that implies knowing something about the paramter.  You should only have to send messages.
+
+SMALL CHANGES WHEN REFACTORING allows you to trust the process, have specs pass, and continue to refactor.
+
+* What about the six-pack - still closed for motification?
+* Sometimes refactoring makes things "worse", before they are better and it is hard to :eyes: to the improvement.
+* **Conitinue to look for commonalities (parameters #s, shape, color, contain other methods) in specs and code.**
+* “Superfluous difference raises the cost of reading code, and increases the difficulty of future refactorings.”
+
+* **NICE:** “ Having multiple methods that take the same (i.e., same concept not necessarily identical) argument is a code smell”
+
+* **NICE:** Benefits of `==` over `>=` or `=<` for clarity in seeing differences and future refactoring!
+
+* **NICE:** “As an OO practitioner, when you see a conditional, the hairs on your neck should stand up”
+
+* **NICE:** “...there’s a big difference between a conditional that selects the correct object and one that supplies behavior. The first is acceptable and generally unavoidable. The second suggests that you are missing objects in your domain....Code is striving for ignorance, and preserving ignorance requires minimizing dependencies.”
+
+### Primitive Obsession
+
+Solve _Primitive Obsession_ with a _Extract Class_: **Create a smarter object to stand in for the primitive.**
+
+* **NICE:** “_Primitive Obsession_ is when you use one of these data classes to represent a concept in your domain.”
+
+* **NICE:** “The cure for _Primitive Obsession_ is to create a new class to use in place of the primitive. For this operation, the refactoring recipe is Extract Class.”
+
+* **YEP!:** “You’ve been introduced to the rule about naming methods at one higher level of abstraction than their current implementation”
+
+* Name _methods_ after what they **mean**, and name _classes_ fater what they **are**.
+
+### Caching
+
+* **The first solution to any problem should avoid caching, use immutable objects, and treat object creation as free.**
+
+## Chapter 6
+
+### Data Clumps
+
+* When similar code is clumped together often, it means maybe we are missing an abstraction.
+* **BLANK LINES** denote signifying topics and **thus** multiple **responsibilities**!
+
+### Updating Conditionals:
+
+1. Replace Conditional with State/Strategy. => solves the problem through _composition_.
+1. Replace Conditional with Polymorphism. => solves the problem through _inheritance_.
+
+### Obsessions
+Obsessions (i.e., `Integer` obessions) are cured (just like _primitive obession_) by extracting with a class.
