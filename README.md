@@ -149,6 +149,8 @@ Great point to remember: **“Remember that the goal is to locate the next small
 
 #### Obeying the Liskov Substitution Principle
 
+* **“Liskov violations. Objects made promises that they did not keep. ”** _=>_ an insufficent use of polymorphism.
+
 * **“Every piece of knowledge is a dependency, and the way that quantity is written requires verse to know too many things. If quantity were more trustworthy, verse could know less.”**
 * Liskov: “subtypes must be substitutable for their supertypes.”
 * _That means:_ **“objects be what they promise they are.”**
