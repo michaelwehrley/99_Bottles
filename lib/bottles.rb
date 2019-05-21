@@ -27,19 +27,22 @@ class Bottles
   # All methods take a `number` parameter
 
   def refrain(number)
-    button_number = BottleNumber.for(number)
-    next_bottle_number = BottleNumber.for(button_number.successor)
+    bottle_number = BottleNumber.for(number)
+    # next_bottle_number = BottleNumber.for(bottle_number.successor)
     # Goal: next_bottle_number = bottle_number.successor :-)
+    next_bottle_number = bottle_number.successor
 
-    "#{button_number} of beer on the wall, ".capitalize +
-    "#{button_number} of beer.\n" +
-    "#{button_number.action}, " +
+    "#{bottle_number} of beer on the wall, ".capitalize +
+    "#{bottle_number} of beer.\n" +
+    "#{bottle_number.action}, " +
     "#{next_bottle_number} of beer on the wall.\n"
   end
 end
 
 class BottleNumber
   def self.for(number)
+    return number if number.kind_of?(BottleNumber)
+
     case number
     when 0
       BottleNumber0
@@ -77,7 +80,7 @@ class BottleNumber
   end
 
   def successor
-    number - 1
+    BottleNumber.for(number - 1)
   end
 end
 
@@ -91,7 +94,7 @@ class BottleNumber0 < BottleNumber
   end
 
   def successor
-    99
+    BottleNumber.for(99)
   end
 end
 
