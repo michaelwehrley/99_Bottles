@@ -231,3 +231,12 @@ Solve _Primitive Obsession_ with a _Extract Class_: **Create a smarter object to
 
 ### Obsessions
 Obsessions (i.e., `Integer` obessions) are cured (just like _primitive obession_) by extracting with a class.
+
+### Factories
+
+* When choosing we use conditions and this is the job of a **factory**.
+* “Factories don’t know what to do: instead, they know how to choose who does. They consolidate the choosing and separate the chosen.”
+
+To determine if polymorphism is correct, we need to understand the domain: **what varies**!  Is it the verse or the bottle.
+
+* “This name is tightly coupled to the current context, and tight coupling makes code resistant to change.”

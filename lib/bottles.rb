@@ -11,13 +11,25 @@ class Bottles
     verses(99, 0) # VERSE NUMBER vs BUTTLE NUMBER in `verse`
   end
 
+  # def bottle_number_for(number)
+  #   case number
+  #    when 0
+  #     BottleNumber0
+  #    when 1
+  #     BottleNumber1
+  #   else
+  #     BottleNumber
+  #   end.new(number)
+  # end
+
   private
 
   # All methods take a `number` parameter
 
   def refrain(number)
-    button_number = BottleNumber.new(number)
-    next_bottle_number = BottleNumber.new(button_number.successor)
+    button_number = BottleNumber.for(number)
+    next_bottle_number = BottleNumber.for(button_number.successor)
+    # Goal: next_bottle_number = bottle_number.successor :-)
 
     "#{button_number} of beer on the wall, ".capitalize +
     "#{button_number} of beer.\n" +
@@ -26,8 +38,18 @@ class Bottles
   end
 end
 
-
 class BottleNumber
+  def self.for(number)
+    case number
+    when 0
+      BottleNumber0
+    when 1
+      BottleNumber1
+    else
+      BottleNumber
+    end.new(number)
+  end
+
   attr_reader :number
 
   def initialize(number)
@@ -39,26 +61,47 @@ class BottleNumber
   end
 
   def action
-    if number == 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun} down and pass it around"
-    end
+    "Take #{pronoun} down and pass it around"
   end
 
   def container
-    number == 1 ? "bottle" : "bottles"
+    "bottles"
   end
 
   def pronoun
-    number == 1 ? "it" : "one"
+    "one"
   end
 
   def quantity
-    number == 0 ? "no more" : number.to_s
+    number.to_s
   end
 
   def successor
-    number == 0 ? 99 : number - 1
+    number - 1
+  end
+end
+
+class BottleNumber0 < BottleNumber
+  def quantity
+    "no more"
+  end
+
+  def action
+    "Go to the store and buy some more"
+  end
+
+  def successor
+    99
+  end
+end
+
+class BottleNumber1 < BottleNumber
+
+  def container
+    "bottle"
+  end
+
+  def pronoun
+    "it"
   end
 end
